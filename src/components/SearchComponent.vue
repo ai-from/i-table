@@ -10,6 +10,7 @@ const searchStore = useSearchStore()
       @update:modelValue="(val: string) => searchStore.setSearchQuery(val)"
       v-model="searchStore.searchQuery"
       placeholder="Search"
+      class="w-full"
     />
   </VIconField>
 </template>
