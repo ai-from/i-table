@@ -3,7 +3,8 @@ import { ref, computed } from 'vue'
 import type { IPerson } from '@/services/interfaces'
 import { useSearchStore } from './searchStore'
 import { usePaginationStore } from './paginationStore'
-import {
+import usePerson from '@/composables/usePerson'
+const {
   getURL,
   getFullName,
   getGender,
@@ -11,7 +12,7 @@ import {
   getDOB,
   getEmail,
   getPhone
-} from '@/composables/person'
+} = usePerson()
 
 export const usePersonsStore = defineStore('personsStore', () => {
   const paginationStore = usePaginationStore()

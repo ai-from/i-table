@@ -3,12 +3,13 @@ import axios from 'axios'
 import { onMounted, watch } from 'vue'
 import { storeToRefs } from 'pinia'
 import { RouterView, useRouter, useRoute } from 'vue-router'
-import { checkUrl } from './composables/url'
 import { usePersonsStore } from './stores/personsStore'
 import { useUrlStore } from './stores/urlStore'
+import useUrl from './composables/useUrl'
 const personsStore = usePersonsStore()
 const urlStore = useUrlStore()
 const { URLQuery, isReset } = storeToRefs(urlStore)
+const { checkUrl } = useUrl()
 
 const router = useRouter()
 const route = useRoute()

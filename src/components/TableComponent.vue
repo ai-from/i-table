@@ -1,11 +1,13 @@
 <script setup lang="ts">
-import { showItemsOnPage } from '@/composables/table'
+// import { showItemsOnPage } from '@/composables/table'
 import { usePersonsStore } from '@/stores/personsStore'
 import { useSortStore } from '@/stores/sortStore'
 import { useUrlStore } from '@/stores/urlStore'
+import useTable from '@/composables/useTable';
 const personsStore = usePersonsStore()
 const sortStore = useSortStore()
 const urlStore = useUrlStore()
+const { showItemsOnPage } = useTable()
 </script>
 
 <template>
